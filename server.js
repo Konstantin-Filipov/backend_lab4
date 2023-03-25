@@ -72,41 +72,41 @@ function authenticateToken(req, res, next) {
 
 function verifyStudent1(req, res, next) {
   if (username == "") {
-    res.redirect("./error");
-  } else if (username == "id1") {
+    res.redirect("/identify");
+  } else if (username == "id1" || username == "id3" || username == "admin") {
     next();
   } else {
-    res.redirect("./error");
+    res.redirect("/identify");
   }
 }
 
 function verifyStudent2(req, res, next) {
   if (username == "") {
-    res.redirect("./error");
-  } else if (username == "id2") {
+    res.redirect("/identify");
+  } else if (username == "id2" || username == "id3" || username == "admin") {
     next();
   } else {
-    res.redirect("./error");
+    res.redirect("/identify");
   }
 }
 
 function verifyTeacher(req, res, next) {
   if (username == "") {
-    res.redirect("./error");
-  } else if (username == "id3") {
+    res.redirect("/identify");
+  } else if (username == "id3" || username == "admin") {
     next();
   } else {
-    res.redirect("./error");
+    res.redirect("/identify");
   }
 }
 
 function verifyAdmin(req, res, next) {
   if (username == "") {
-    res.redirect("./error");
+    res.redirect("/identify");
   } else if (username == "admin") {
     next();
   } else {
-    res.render("fail.ejs");
+    res.render("/identify");
   }
 }
 
